@@ -14,8 +14,7 @@ Group 4
 We are building a data model to track the Athens Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. 
 
 ## Data Model
-
-
+<img width="1235" height="703" alt="Data Model" src="https://github.com/user-attachments/assets/90b2310c-96c1-479e-840d-61b84f5d2c7c" />
 
 ## Data Dictionary
 
