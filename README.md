@@ -11,8 +11,7 @@ Group 4
 - Alexis Melchiorre:
 
 ## Scenario Description
-
-	We are building a data model to track the Athens Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. 
+We are building a data model to track the Athens Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. 
 
 ## Data Model
 
@@ -20,7 +19,7 @@ Group 4
 
 ## Data Dictionary
 
-# Table: **ANNOUNCER**
+### Table: **ANNOUNCER**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -30,7 +29,7 @@ Group 4
 | yrsExperience | The amount of years that the announcer has been working in announcing  | INT |  |  |  |
 | broadcasterID | Indicates the broadcaster that the announcer works for  | INT |  |  | FK (ref. BROADCASTER) |
 
-# Table: **ASSIGNMENT**
+### Table: **ASSIGNMENT**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -41,7 +40,7 @@ Group 4
 | startTime | The time that the assignment starts | DATETIME |  |  |  |
 | endTime | The time that the assignment ends  | DATETIME |  |  |  |
 
-# Table: **ATHLETE** 
+### Table: **ATHLETE** 
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -53,7 +52,7 @@ Group 4
 | coachID | Indicates who the athlete’s coach is | INT |  |  | FK (ref. COACH) |
 | captainID | Indicates which athlete is the captain and who they’re the captain of  | INT |  |  | FK (ref. ATHLETE) |
 
-# Table: **BROADCASTER**
+### Table: **BROADCASTER**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | ----- | ----- | ----- | ----- | ----- | ----- |
@@ -61,7 +60,7 @@ Group 4
 | name | The name of the broadcast | TEXT | 45 |  |  |
 | language | The language of the broadcast | TEXT | 20 |  |  |
 
-# Table: **COACH**
+### Table: **COACH**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -72,7 +71,7 @@ Group 4
 | sportID | Indicates which sport the coach coach’s  | INT |  |  | FK (ref.SPORT) |
 | countryID | Indicates which country the coach is from | INT |  |  | FK (ref.COUNTRY) |
 
-# Table: **COUNTRY**
+### Table: **COUNTRY**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -80,7 +79,7 @@ Group 4
 | name | Name of the country | Text | 45 |  |  |
 | anthem | The country’s national anthem  | Text | 45 |  |  |
 
-# Table: **EVENT**
+### Table: **EVENT**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -91,7 +90,7 @@ Group 4
 | sportID | Indicates which sport this event is  | INT |  |  | FK (ref. SPORT) |
 | venueID | Indicates where the event is taking place | INT |  |  | FK (ref. VENUE) |
 
-Table: **PARTICIPANT**
+### Table: **PARTICIPANT**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -100,14 +99,14 @@ Table: **PARTICIPANT**
 | eventID | Indicates which event is the participant is in | INT |  |  | FK(ref.EVENT) |
 | result | The results of an event in which an athlete participates  | TEXT | 45 |  |  |
 
-# Table: **SPORT**
+### Table: **SPORT**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | sportID | Unique sequential number identifying each sport | INT |  |  | PK |
 | name | The name of the sport | Text | 45 |  |  |
 
-# Table: **VENUE**
+### Table: **VENUE**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -117,7 +116,7 @@ Table: **PARTICIPANT**
 | guestCapacity | The capacity of the venue  | INT |  |  |  |
 | parentVenueID | Indicates the parent venue of venue | INT |  |  | FK (ref. VENUE) |
 
-# Table: **WINNER**
+### Table: **WINNER**
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | :---- | :---- | :---- | :---- | :---- | :---- |
