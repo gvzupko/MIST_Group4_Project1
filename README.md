@@ -5,7 +5,7 @@
 62775 - Group 4
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
-- George Zupko:  
+- George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
 - Kelly Stephenson:  
 - Kevin Wang:  
 - Alexis Melchiorre:
