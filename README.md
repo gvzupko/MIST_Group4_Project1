@@ -1,8 +1,8 @@
-# MIST 4610 Group Project 1 - Group 4
+# MIST 4610 Group Project 1
 
 ## Team Name and Members
 
-Group 4
+62775 - Group 4
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
 - George Zupko:  
