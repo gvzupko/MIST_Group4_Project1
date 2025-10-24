@@ -33,7 +33,8 @@ Lastly, The model includes a Broadcaster entity, representing broadcasting compa
 
 Overall, this data model provides a detailed, relational view of how athletes, events, countries, and broadcasters interact during the Athens Olympics, capturing the competitive, organizational, and media aspects of the games.
 
-<img width="1235" height="703" alt="Data Model" src="https://github.com/user-attachments/assets/90b2310c-96c1-479e-840d-61b84f5d2c7c" />
+<img width="1233" height="701" alt="Data Model" src="https://github.com/user-attachments/assets/7bb3d4a8-b14d-4aab-8e66-9ee53abc33de" />
+
 
 ## Data Dictionary
 
