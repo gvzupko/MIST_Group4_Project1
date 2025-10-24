@@ -11,9 +11,28 @@
 - Alexis Melchiorre:
 
 ## Scenario Description
-We built a data model to track the Athens Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. The data model is designed for an organizer or someone within the event to be able to quickly find important data and statitcs to cater to their needs. 
+We built a data model to track the Athens, GA Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. The data model is designed for an organizer or someone within the event to be able to quickly find important data and statitcs to cater to their needs. 
 
 ## Data Model
+Our model represents the structure of the Athens, GA Olympics. Our own imaginative  large-scale international sporting event featuring athletes, coaches, venues, and broadcasters from around the world. 
+
+The Country entity represents the nations that participate in the games. Each country has a name and national anthem. Multiple athletes and coaches are associated with each country. This is shown through one-to-many relationships between Country and Athlete and between Country and Coach.
+The Athlete represents athletes that are competing in the Athens Olympics. The athletes entity keeps track of things such as the athletes name, age, and gender. This entity is also tied to country and sport so that we are able to track which country each athlete is from and who coaches them. The athlete entity also includes a captainID attribute, allowing the system to recognize team captains. This self-referential relationship lets one athlete be marked as the captain for other athletes within the same sport or country.
+
+The Coach entity represents the trainers who prepare athletes for competition. Each coach is linked to a specific Sport and Country. The coach entity contains information on items such as the coach’s age, sport, and country.
+
+The Sport entity lists all the sports featured in the Athens Olympics. Each sport can have many Events (for example, “Track” may include “100m Dash,” “Relay,” etc.), which is shown through the one-to-many relationship between Sport and Event.
+
+The Event entity captures details about each competition, including its name, start time, type, and associated sport. Every event takes place at a specific Venue, which includes attributes such as address, capacity, and a possible parentVenueID to show sub-venues (for example, a stadium that contains multiple arenas). This is represented by a one-to-many relationship between Venue and Event.
+
+Each Athlete participates in one or more events, and each event has many athletes competing. To represent this many-to-many relationship, we created the Participant entity. This table records which athlete competed in which event and their result from each event.
+
+The Winner entity identifies athletes who placed in their events. It references both the Athlete and Participant tables and includes the medalType (Gold, Silver, Bronze), allowing for easy tracking of medal distributions across events.
+
+Lastly, The model includes a Broadcaster entity, representing broadcasting companies covering the games. Each broadcaster employs multiple Announcers, who differ by years of experience and salary. Announcers are linked to specific events through the Assignment table, which records who covered which event and during what time frame. This structure allows the model to track broadcasting logistics and personnel involvement efficiently.
+
+Overall, this data model provides a detailed, relational view of how athletes, events, countries, and broadcasters interact during the Athens Olympics, capturing the competitive, organizational, and media aspects of the games.
+
 <img width="1235" height="703" alt="Data Model" src="https://github.com/user-attachments/assets/90b2310c-96c1-479e-840d-61b84f5d2c7c" />
 
 ## Data Dictionary
@@ -36,8 +55,8 @@ We built a data model to track the Athens Olympics. Each event contains relation
 | eventID | Indicates what the event is  | INT |  |  | FK (ref.EVENT) |
 | broadcasterID | Indicates which broadcaster is assigned  | INT |  |  | FK (ref.(BROADCASTER) |
 | announcerID | Indicates which announcer is assigned  | INT |  |  | FK (ref.ANNOUNCER) |
-| startTime | The time that the assignment starts | TIME |  |  |  |
-| endTime | The time that the assignment ends  | TIME |  |  |  |
+| startTime | The time that the assignment starts | TIME |  | 00:00:00 |  |
+| endTime | The time that the assignment ends  | TIME |  | 00:00:00 |  |
 
 ### Table: **ATHLETE** 
 
@@ -84,7 +103,7 @@ We built a data model to track the Athens Olympics. Each event contains relation
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | eventID | Unique sequential number identifying each event | INT |  |  | PK |
 | name | Name of the event  | VARCHAR | 45 |  |  |
-| startTime | The time that the event starts | DATETIME |  | YYYY/MM/DD |  |
+| startTime | The time that the event starts | DATETIME |  | YYYY/MM/DD 00:00:00 |  |
 | type | The type of event (prelims/finals) | VARCHAR | 10 |  |  |
 | sportID | Indicates which sport this event is  | INT |  |  | FK (ref. SPORT) |
 | venueID | Indicates where the event is taking place | INT |  |  | FK (ref. VENUE) |
