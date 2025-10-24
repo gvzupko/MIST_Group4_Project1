@@ -36,8 +36,8 @@ We built a data model to track the Athens Olympics. Each event contains relation
 | eventID | Indicates what the event is  | INT |  |  | FK (ref.EVENT) |
 | broadcasterID | Indicates which broadcaster is assigned  | INT |  |  | FK (ref.(BROADCASTER) |
 | announcerID | Indicates which announcer is assigned  | INT |  |  | FK (ref.ANNOUNCER) |
-| startTime | The time that the assignment starts | DATETIME |  |  |  |
-| endTime | The time that the assignment ends  | DATETIME |  |  |  |
+| startTime | The time that the assignment starts | TIME |  |  |  |
+| endTime | The time that the assignment ends  | TIME |  |  |  |
 
 ### Table: **ATHLETE** 
 
