@@ -2,7 +2,7 @@
 
 ## Team Name and Members
 
-62775 - Group 4
+62755 - Group 4
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
 - George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
@@ -145,3 +145,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 ## Queries
 
 ## Database Information
+Name of the database: ns_F25MIST4610_62755_Group4
+Each of the queries documented here can be called using stored producedures.
+CALL TP_Q1();
+---
+
