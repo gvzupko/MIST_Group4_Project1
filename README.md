@@ -149,5 +149,4 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 Name of the database: ns_F25MIST4610_62755_Group4
 Each of the queries documented here can be called using stored producedures.
 CALL TP_Q1();
----
 
