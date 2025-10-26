@@ -6,7 +6,7 @@
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
 - George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
-- Kelly Stephenson: [@kms25583-tech]([@kms25583-tech](https://github.com/kms25583-tech))
+- Kelly Stephenson: [https://github.com/kms25583-tech](https://github.com/kms25583-tech)
 - Kevin Wang:  [https://github.com/kkw01911/MIST_Group4_Project1](https://github.com/kkw01911/MIST_Group4_Project1)
 - Alexis Melchiorre:
 
