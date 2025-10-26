@@ -335,7 +335,7 @@ Query 4 finds the total number of athletes representing each country. This allow
 | South Korea       | 2                    |
 
 ### Query 5
-Query 5 returns the top 3 countries by total medals won, which can serve as a performance benchmark and useful as data to show to the media.
+Query 5 returns the top 5 countries by total medals won, which can serve as a performance benchmark and useful as data to show to the media.
 
     SELECT 
         Country.name AS Country_Name,
@@ -345,7 +345,7 @@ Query 5 returns the top 3 countries by total medals won, which can serve as a pe
     JOIN Country ON Athlete.countryID = Country.countryID
     GROUP BY Country.name
     ORDER BY Total_Medals DESC
-    LIMIT 3;
+    LIMIT 5;
 
 | Country_Name      | Total_Medals      |
 | ----------------- | ----------------- |
@@ -354,9 +354,6 @@ Query 5 returns the top 3 countries by total medals won, which can serve as a pe
 | Japan             | 4                 |
 | Taiwan            | 4                 |
 | Canada            | 4                 |
-| United Kingdom    | 3                 |
-| South Africa      | 3                 |
-| India             | 2                 |
 
 ### Query 6
 Query 6 finds athletes who are team captains and have also won medals, highlighting captains and their role in the team and can be used to identify whether a correlation exists between leadership and medal success.
