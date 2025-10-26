@@ -224,6 +224,7 @@ Query 1 lists all athletes and the country they represent, so managers can ensur
 
 ### Query #2
 Query 2 gets all events with their sport and venue, which helps managers coordinate event timelines so no event conflict happens.
+
     SELECT 
         Event.name AS Event_Name, 
         Sport.name AS Sport_Name, 
@@ -358,6 +359,7 @@ Query 5 returns the top 3 countries by total medals won, which can serve as a pe
 
 ### Query 6
 Query 6 finds athletes who are team captains and have also won medals, highlighting captains and their role in the team and can be used to identify whether a correlation exists between leadership and medal success.
+
     SELECT 
         Athlete.name AS Captain_Name,
         Country.name AS Country_Name,
@@ -450,6 +452,7 @@ Query 9 finds Countries with Athletes but no Medals; this would show which count
 
 ### Query 10
 Query 10 shows Coaches Whose Athletes won more than 3 Medals; this highlights and recognizes great coaching talents and show which training methods are working.
+
     SELECT 
         Coach.name AS Coach_Name,
         COUNT(Winner.medalType) AS Total_Medals
