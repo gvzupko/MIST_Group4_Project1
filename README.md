@@ -488,4 +488,12 @@ Name of the database: ns_F25MIST4610_62755_Group4
 Each of the queries documented here can be called using stored producedures.
 
 CALL TP_Q1();
-
+CALL TP_Q2();
+CALL TP_Q3();
+CALL TP_Q4();
+CALL TP_Q5();
+CALL TP_Q6();
+CALL TP_Q7();
+CALL TP_Q8();
+CALL TP_Q9();
+CALL TP_Q10();
