@@ -145,7 +145,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | medalType | The type of medal the winner received  | VARCHAR | 10 |  |  |
 
 ## Queries
-<img width="686" height="521" alt="Screenshot 2025-10-26 at 4 49 35 PM" src="https://github.com/user-attachments/assets/a57db954-b33e-48f5-81c4-facbf2a2ecc7" />
+<img width="713" height="513" alt="Screenshot 2025-10-26 at 6 28 44 PM" src="https://github.com/user-attachments/assets/2eb96907-a30f-459b-90ed-1ec5217da594" />
 
 ### Query #1
 Query 1 lists all athletes and the country they represent, so managers can ensure each athlete is correctly registered under their respective countries. This data can later be linked to medals and other performance metrics.
