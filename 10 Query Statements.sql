@@ -1,4 +1,5 @@
 #Producure 1
+CREATE PROCEDURE TP_Q1()
 SELECT 
    Athlete.name AS Athlete_Name, 
    Country.name AS Country_Name
@@ -6,6 +7,7 @@ FROM Athlete
 JOIN Country ON Athlete.countryID = Country.countryID;
 
 #Producure 2
+CREATE PROCEDURE TP_Q2()
 SELECT 
     Event.name AS Event_Name, 
     Sport.name AS Sport_Name, 
@@ -17,6 +19,7 @@ JOIN Sport ON Event.sportID = Sport.sportID
 JOIN Venue ON Event.venueID = Venue.venueID;
 
 #Producure 3
+CREATE PROCEDURE TP_Q3()
 SELECT 
     Athlete.name AS Athlete_Name, 
     Winner.medalType AS Medal_Type
@@ -24,6 +27,7 @@ FROM Winner
 JOIN Athlete ON Winner.athleteID = Athlete.athleteID;
 
 #Producure 4
+CREATE PROCEDURE TP_Q4()
 SELECT 
     Country.name AS Country_Name, 
     COUNT(Athlete.athleteID) AS Number_Athletes
@@ -33,6 +37,7 @@ GROUP BY Country.name
 ORDER BY Number_Athletes DESC;
 
 #Producure 5
+CREATE PROCEDURE TP_Q5()
 SELECT 
     Country.name AS Country_Name,
     COUNT(Winner.medalType) AS Total_Medals
@@ -44,6 +49,7 @@ ORDER BY Total_Medals DESC
 LIMIT 5;
 
 #Producure 6
+CREATE PROCEDURE TP_Q6()
 WITH
 captain AS (SELECT * FROM Athlete),
 sub AS (SELECT * FROM Athlete)
@@ -56,6 +62,7 @@ JOIN Winner ON captain.athleteID = Winner.athleteID
 GROUP BY captain.name;
 
 #Producure 7
+CREATE PROCEDURE TP_Q7()
 SELECT 
     Event.name AS Event_Name,
     COUNT(Participant.participantID) AS Number_Participants
@@ -65,6 +72,7 @@ GROUP BY Event.name
 ORDER BY Number_Participants DESC;
 
 #Producure 8
+CREATE PROCEDURE TP_Q8()
 SELECT 
     Country.name AS Country_Name,
     COUNT(DISTINCT Winner.athleteID) * 1.0 / COUNT(DISTINCT Athlete.athleteID) AS Medal_Efficiency
@@ -75,6 +83,7 @@ GROUP BY Country.name
 ORDER BY Medal_Efficiency DESC;
 
 #Producure 9
+CREATE PROCEDURE TP_Q9()
 SELECT 
     Country.name AS Country_Name,
     COUNT(Athlete.athleteID) AS Total_Athletes
@@ -88,6 +97,7 @@ GROUP BY Country.name
 ORDER BY Total_Athletes DESC;
 
 #Producure 10
+CREATE PROCEDURE TP_Q10()
 SELECT 
     Coach.name AS Coach_Name,
     COUNT(Winner.medalType) AS Total_Medals
