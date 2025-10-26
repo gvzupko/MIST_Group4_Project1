@@ -146,6 +146,310 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 
 ## Queries
 
+### Query #1
+    SELECT 
+        Athlete.name AS Athlete_Name, 
+        Country.name AS Country_Name
+    FROM Athlete
+    JOIN Country ON Athlete.countryID = Country.countryID;
+
+| Athlete_Name      | Country_Name      |
+| ----------------- | ----------------- |
+| Caeleb Dressel    | United States of America |
+| Joe Bottom        | United States of America |
+| Pam Meyer         | United States of America |
+| Edith Wetzel      | United States of America |
+| Simon Biles       | United States of America |
+| Sunisa Lee        | United States of America |
+| Jade Carey        | United States of America |
+| Stephen Nedoroscik | United States of America |
+| Laura Kraut       | United States of America |
+| Noah Lyles        | United States of America |
+| Kenneth Bednark   | United States of America |
+| Sydney McLaughlin-Levrone | United States of America |
+| Anna Cockrell     | United States of America |
+| Tatsumi Mon       | Japan             |
+| Hakoro Mon        | Japan             |
+| Takaaki Sugino    | Japan             |
+| Toshiyuki Tanaka  | Japan             |
+| Kentaro Sato      | Japan             |
+| Naoko Takahashi   | Japan             |
+| Glenn Hall        | Canada            |
+| Justin Horton     | Canada            |
+| Summer McIntosh   | Canada            |
+| Ava Stewart       | Canada            |
+| William Emard     | Canada            |
+| Isabell Werth     | Canada            |
+| Duan Asemota      | Canada            |
+| Savannah Sutherland | Canada            |
+| Mark Foster       | United Kingdom    |
+| Rie Van Veen      | United Kingdom    |
+| Dawn Fraser       | United Kingdom    |
+| Max Whitlock      | United Kingdom    |
+| Ben Maher         | United Kingdom    |
+| Charles Dobson    | United Kingdom    |
+| Jessie Knight     | United Kingdom    |
+| Dayeong Lee       | South Korea       |
+| Woong Hur         | South Korea       |
+| Song Hu           | North Korea       |
+| Ri Sol-ju         | North Korea       |
+| Chang Ok An       | North Korea       |
+| Kim Jong Un       | North Korea       |
+| Yang Tu           | Taiwan            |
+| Ye Shiwen         | Taiwan            |
+| Yaquin Zhou       | Taiwan            |
+| Zou Jingyuan      | Taiwan            |
+| Liu Yang          | Taiwan            |
+| Wong I-sheau      | Taiwan            |
+| Zhenye Xie        | Taiwan            |
+| Jiadie Mo         | Taiwan            |
+| Jonty Skinner     | South Africa      |
+| Roland Schoeman   | South Africa      |
+| Nelson Mandela    | South Africa      |
+| Zakithi Nene      | South Africa      |
+| Zeney Geldenhuys  | South Africa      |
+| César Cielo       | Brazil            |
+| Mireia Belmonte   | Brazil            |
+| Rebeca Andrade    | Brazil            |
+| Julia Soares      | Brazil            |
+| Diogo Soares      | Brazil            |
+| Filipe Masetti    | Brazil            |
+| Paulo Andre Camilo | Brazil            |
+| Chayenne Da Silva | Brazil            |
+| Mantu Debnath     | India             |
+| Mahatma Gandhi    | India             |
+| Dutee Chand       | India             |
+
+### Query #2
+    SELECT 
+        Event.name AS Event_Name, 
+        Sport.name AS Sport_Name, 
+        Venue.name AS Venue_Name, 
+        Event.startTime, 
+        Event.type
+    FROM Event
+    JOIN Sport ON Event.sportID = Sport.sportID
+    JOIN Venue ON Event.venueID = Venue.venueID;
+
+| Event_Name      | Sport_Name      | Venue_Name      | startTime      | type      |
+| --------------- | --------------- | --------------- | -------------- | --------- |
+| Mens 50 FR      | Swim            | Pool 1          | 2025-10-23 09:15:00 | Prelim    |
+| Mens 100 FR     | Swim            | Pool 1          | 2025-10-23 12:20:00 | Prelim    |
+| Womens 200 FLY  | Swim            | Pool 1          | 2025-10-23 10:10:00 | Prelim    |
+| Womens 400 IM   | Swim            | Pool 1          | 2025-10-23 03:10:00 | Prelim    |
+| Mens 50 FR      | Swim            | Pool 2          | 2025-10-27 10:30:00 | Final     |
+| Mens 100 FR     | Swim            | Pool 2          | 2025-10-27 13:30:00 | Final     |
+| Womens 200 FLY  | Swim            | Pool 2          | 2025-10-27 15:30:00 | Final     |
+| Womens 400 IM   | Swim            | Pool 2          | 2025-10-27 16:10:00 | Final     |
+| Womens Beam     | Gymnastics      | STEG            | 2025-10-24 14:25:00 | Final     |
+| Womens Vault    | Gymnastics      | STEG            | 2025-10-24 10:20:00 | Final     |
+| Mens Pommel Horse | Gymnastics      | STEG            | 2025-10-25 13:15:00 | Final     |
+| Mens Rings      | Gymnastics      | STEG            | 2025-10-25 09:15:00 | Final     |
+| Mens 400 Meter Dash | Track           | Coco Cola Track | 2025-10-28 14:50:00 | Prelim    |
+| Mens 100 Meter Dash | Track           | Coco Cola Track | 2025-10-28 11:20:00 | Prelim    |
+| Mens 400 Meter Dash | Track           | Coco Cola Track | 2025-10-29 12:15:00 | Final     |
+| Mens 100 Meter Dash | Track           | Coco Cola Track | 2025-10-29 12:22:00 | Final     |
+| Womens 400 Meter Hurdles | Track           | Coco Cola Track | 2025-10-28 09:30:00 | Prelim    |
+| Womens 400 Meter Hurdles | Track           | Coco Cola Track | 2025-10-29 10:40:00 | Final     |
+| Womens 400 Meter Dash | Track           | Coco Cola Track | 2025-10-28 03:20:00 | Prelim    |
+| Womens 400 Meter Dash | Track           | Coco Cola Track | 2025-10-29 14:30:00 | Final     |
+| Mixed Horse Jumping | Equestrian      | Milledege Center | 2025-10-26 12:40:00 | Final     |
+
+### Query 3
+    SELECT 
+        Athlete.name AS Athlete_Name, 
+        Winner.medalType AS Medal_Type
+    FROM Winner
+    JOIN Athlete ON Winner.athleteID = Athlete.athleteID;
+| Athlete_Name      | Medal_Type      |
+| ----------------- | --------------- |
+| Rebeca Andrade    | Silver          |
+| Rebeca Andrade    | Gold            |
+| Simon Biles       | Gold            |
+| Simon Biles       | Silver          |
+| Sunisa Lee        | Bronze          |
+| Jade Carey        | Bronze          |
+| Stephen Nedoroscik | Gold            |
+| Max Whitlock      | Silver          |
+| Max Whitlock      | Bronze          |
+| Takaaki Sugino    | Bronze          |
+| Zou Jingyuan      | Gold            |
+| Liu Yang          | Silver          |
+| Sunisa Lee        | Gold            |
+| Mahatma Gandhi    | Silver          |
+| Wong I-sheau      | Bronze          |
+| César Cielo       | Gold            |
+| Roland Schoeman   | Silver          |
+| Caeleb Dressel    | Bronze          |
+| Caeleb Dressel    | Gold            |
+| Glenn Hall        | Silver          |
+| Glenn Hall        | Bronze          |
+| Pam Meyer         | Bronze          |
+| Summer McIntosh   | Silver          |
+| Edith Wetzel      | Gold            |
+| Summer McIntosh   | Bronze          |
+| Mireia Belmonte   | Silver          |
+| Ye Shiwen         | Gold            |
+| Charles Dobson    | Silver          |
+| Kentaro Sato      | Bronze          |
+| Zakithi Nene      | Gold            |
+| Noah Lyles        | Gold            |
+| Kenneth Bednark   | Silver          |
+| Zakithi Nene      | Bronze          |
+| Sydney McLaughlin-Levrone | Gold            |
+| Anna Cockrell     | Silver          |
+| Naoko Takahashi   | Bronze          |
+| Sydney McLaughlin-Levrone | Gold            |
+| Naoko Takahashi   | Silver          |
+| Dutee Chand       | Bronze          |
+
+### Query 4
+    SELECT 
+        Country.name AS Country_Name, 
+        COUNT(Athlete.athleteID) AS Number_Athletes
+    FROM Athlete
+    JOIN Country ON Athlete.countryID = Country.countryID
+    GROUP BY Country.name
+    ORDER BY Number_Athletes DESC;
+
+| Country_Name      | Number_Athletes      |
+| ----------------- | -------------------- |
+| United States of America | 13                   |
+| Canada            | 8                    |
+| Taiwan            | 8                    |
+| Brazil            | 8                    |
+| United Kingdom    | 7                    |
+| Japan             | 6                    |
+| South Africa      | 5                    |
+| North Korea       | 4                    |
+| India             | 3                    |
+| South Korea       | 2                    |
+
+### Query 5
+    SELECT 
+        Country.name AS Country_Name,
+        COUNT(Winner.medalType) AS Total_Medals
+    FROM Winner
+    JOIN Athlete ON Winner.athleteID = Athlete.athleteID
+    JOIN Country ON Athlete.countryID = Country.countryID
+    GROUP BY Country.name
+    ORDER BY Total_Medals DESC
+    LIMIT 3;
+
+| Country_Name      | Total_Medals      |
+| ----------------- | ----------------- |
+| United States of America | 15                |
+| Brazil            | 4                 |
+| Japan             | 4                 |
+| Taiwan            | 4                 |
+| Canada            | 4                 |
+| United Kingdom    | 3                 |
+| South Africa      | 3                 |
+| India             | 2                 |
+
+### Query 6
+    SELECT 
+        Athlete.name AS Captain_Name,
+        Country.name AS Country_Name,
+        Winner.medalType AS Medal_Type
+    FROM Athlete
+    JOIN Winner ON Athlete.athleteID = Winner.athleteID
+    WHERE Athlete.athleteID = Athlete.captainID;
+
+**NOT WORKING!!!**
+
+
+### Query 7
+    SELECT 
+        Event.name AS Event_Name,
+        COUNT(Participant.participantID) AS Number_Participants
+    FROM Participant 
+    JOIN Event ON Participant.eventID = Event.eventID
+    GROUP BY Event.name
+    ORDER BY Number_Participants DESC;
+
+| Event_Name      | Number_Participants      |
+| --------------- | ------------------------ |
+| Womens 400 Meter Hurdles | 12                       |
+| Womens 400 Meter Dash | 12                       |
+| Mens 50 FR      | 11                       |
+| Mens 100 FR     | 11                       |
+| Womens 200 FLY  | 11                       |
+| Womens 400 IM   | 11                       |
+| Mens 400 Meter Dash | 11                       |
+| Mens 100 Meter Dash | 11                       |
+| Womens Beam     | 8                        |
+| Womens Vault    | 8                        |
+| Mens Pommel Horse | 8                        |
+| Mens Rings      | 8                        |
+| Mixed Horse Jumping | 8                        |
+
+### Query 8
+    SELECT 
+        Country.name AS Country_Name,
+        COUNT(DISTINCT Winner.athleteID) * 1.0 / COUNT(DISTINCT Athlete.athleteID) AS Medal_Efficiency
+    FROM Country
+    JOIN Athlete ON Country.countryID = Athlete.countryID
+    LEFT JOIN Winner ON Athlete.athleteID = Winner.athleteID
+    GROUP BY Country.name
+    ORDER BY Medal_Efficiency DESC;
+
+| Country_Name      | Medal_Efficiency      |
+| ----------------- | --------------------- |
+| United States of America | 0.84615               |
+| India             | 0.66667               |
+| Japan             | 0.50000               |
+| Taiwan            | 0.50000               |
+| South Africa      | 0.40000               |
+| Brazil            | 0.37500               |
+| United Kingdom    | 0.28571               |
+| Canada            | 0.25000               |
+| North Korea       | 0.00000               |
+| South Korea       | 0.00000               |
+
+### Query 9
+    SELECT 
+        Country.name AS Country_Name,
+        COUNT(Athlete.athleteID) AS Total_Athletes
+    FROM Country
+    JOIN Athlete ON Country.countryID = Athlete.countryID
+    WHERE NOT EXISTS (
+        SELECT *
+        FROM Winner
+        WHERE Winner.athleteID = Athlete.athleteID)
+    GROUP BY Country.name
+    ORDER BY Total_Athletes DESC;
+| Country_Name      | Total_Athletes      |
+| ----------------- | ------------------- |
+| Canada            | 6                   |
+| United Kingdom    | 5                   |
+| Brazil            | 5                   |
+| North Korea       | 4                   |
+| Taiwan            | 4                   |
+| Japan             | 3                   |
+| South Africa      | 3                   |
+| United States of America | 2                   |
+| South Korea       | 2                   |
+| India             | 1                   |
+
+### Query 10
+    SELECT 
+        Coach.name AS Coach_Name,
+        COUNT(Winner.medalType) AS Total_Medals
+    FROM Coach
+    JOIN Athlete ON Coach.coachID = Athlete.coachID
+    JOIN Winner ON Athlete.athleteID = Winner.athleteID
+    GROUP BY Coach.name
+    HAVING COUNT(Winner.medalType) > 3
+    ORDER BY Total_Medals DESC;
+| Coach_Name      | Total_Medals      |
+| --------------- | ----------------- |
+| Jessica Smith   | 5                 |
+| Sarah Johnson   | 5                 |
+| John Smith      | 4                 |
+| Elieen Reagan   | 4                 |
+
+
 ## Database Information
 Name of the database: ns_F25MIST4610_62755_Group4
 
