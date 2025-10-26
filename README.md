@@ -8,7 +8,7 @@
 - George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
 - Kelly Stephenson: [https://github.com/kms25583-tech](https://github.com/kms25583-tech)
 - Kevin Wang:  [https://github.com/kkw01911/MIST_Group4_Project1](https://github.com/kkw01911/MIST_Group4_Project1)
-- Alexis Melchiorre:
+- Alexis Melchiorre: [https://github.com/amm-melch/MIST_Group4_Project1](https://github.com/amm-melch/MIST_Group4_Project1)
 
 ## Scenario Description
 We built a data model to track the Athens, GA Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. The data model is designed for an organizer or someone within the event to be able to quickly find important data and statitcs to cater to their needs. 
