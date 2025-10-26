@@ -361,15 +361,26 @@ Query 5 returns the top 3 countries by total medals won, which can serve as a pe
 ### Query 6
 Query 6 finds athletes who are team captains and have also won medals, highlighting captains and their role in the team and can be used to identify whether a correlation exists between leadership and medal success.
 
+    WITH
+    captain AS (SELECT * FROM Athlete),
+    sub AS (SELECT * FROM Athlete)
     SELECT 
-        Athlete.name AS Captain_Name,
-        Country.name AS Country_Name,
-        Winner.medalType AS Medal_Type
-    FROM Athlete
-    JOIN Winner ON Athlete.athleteID = Winner.athleteID
-    WHERE Athlete.athleteID = Athlete.captainID;
+        captain.name AS "Captain_Name",
+        COUNT(Winner.athleteID) AS "Medal_Num"
+    FROM captain
+    JOIN sub ON sub.captainID = captain.athleteID
+    JOIN Winner ON captain.athleteID = Winner.athleteID
+    GROUP BY captain.name;
 
-**NOT WORKING!!!**
+| Captain_Name      | Medal_Num      |
+| ----------------- | -------------- |
+| Caeleb Dressel    | 6              |
+| Summer McIntosh   | 4              |
+| Mireia Belmonte   | 1              |
+| Rebeca Andrade    | 4              |
+| Simon Biles       | 6              |
+| Sydney McLaughlin-Levrone | 6              |
+
 
 
 ### Query 7
