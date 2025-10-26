@@ -6,7 +6,7 @@
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
 - George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
-- Kelly Stephenson:  @kms25583-tech
+- Kelly Stephenson: [https://github.com/kms25583-tech/MIST_Group4_Project1](https://github.com/kms25583-tech/MIST_Group4_Project1)
 - Kevin Wang:  [https://github.com/kkw01911/MIST_Group4_Project1](https://github.com/kkw01911/MIST_Group4_Project1)
 - Alexis Melchiorre:
 
@@ -14,9 +14,10 @@
 We built a data model to track the Athens, GA Olympics. Each event contains relationships to indicate all athletes involved, broadcasters, the location of the event, the sport, and other important data to represent the event as a whole. The data model is designed to be able handle a wide variety of types of events, as well as many other key factors that an organizer might want to store about the Olympics. The data model is designed for an organizer or someone within the event to be able to quickly find important data and statitcs to cater to their needs. 
 
 ## Data Model
-Our model represents the structure of the Athens, GA Olympics. Our own imaginative  large-scale international sporting event featuring athletes, coaches, venues, and broadcasters from around the world. 
+Our model represents the structure of the Athens, GA Olympics. Our own imaginative large-scale international sporting event featuring athletes, coaches, venues, and broadcasters from around the world. 
 
 The Country entity represents the nations that participate in the games. Each country has a name and national anthem. Multiple athletes and coaches are associated with each country. This is shown through one-to-many relationships between Country and Athlete and between Country and Coach.
+
 The Athlete represents athletes that are competing in the Athens Olympics. The athletes entity keeps track of things such as the athletes name, age, and gender. This entity is also tied to country and sport so that we are able to track which country each athlete is from and who coaches them. The athlete entity also includes a captainID attribute, allowing the system to recognize team captains. This self-referential relationship lets one athlete be marked as the captain for other athletes within the same sport or country.
 
 The Coach entity represents the trainers who prepare athletes for competition. Each coach is linked to a specific Sport and Country. The coach entity contains information on items such as the coach’s age, sport, and country.
