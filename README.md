@@ -132,7 +132,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | venueID | Unique sequential number identifying the venue | INT |  |  | PK |
 | name | The name of the venue  | VARCHAR | 45 |  |  |
-| address | The address of the venue  | VARCHAR | 45 | \!\!\!\!\!\! |  |
+| address | The address of the venue  | VARCHAR | 45 | 123 Main St |  |
 | guestCapacity | The capacity of the venue  | INT |  |  |  |
 | parentVenueID | Indicates the parent venue of venue | INT |  |  | FK (ref. VENUE) |
 
@@ -147,6 +147,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 ## Queries
 
 ### Query #1
+Query 1 lists all athletes and the country they represent, so managers can ensure each athlete is correctly registered under their respective countries. This data can later be linked to medals and other performance metrics.
+
     SELECT 
         Athlete.name AS Athlete_Name, 
         Country.name AS Country_Name
@@ -221,6 +223,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | Dutee Chand       | India             |
 
 ### Query #2
+Query 2 gets all events with their sport and venue, which helps managers coordinate event timelines so no event conflict happens.
     SELECT 
         Event.name AS Event_Name, 
         Sport.name AS Sport_Name, 
@@ -256,6 +259,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | Mixed Horse Jumping | Equestrian      | Milledege Center | 2025-10-26 12:40:00 | Final     |
 
 ### Query 3
+Query 3 finds all athletes who won medals and which type, which allows managers to track high-performers and their rankings.
+
     SELECT 
         Athlete.name AS Athlete_Name, 
         Winner.medalType AS Medal_Type
@@ -304,6 +309,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | Dutee Chand       | Bronze          |
 
 ### Query 4
+Query 4 finds the total number of athletes representing each country. This allows managers to see how many athletes represent each country ranked from highest to lowest, which can be used to compare medal efficiency.
+
     SELECT 
         Country.name AS Country_Name, 
         COUNT(Athlete.athleteID) AS Number_Athletes
@@ -326,6 +333,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | South Korea       | 2                    |
 
 ### Query 5
+Query 5 returns the top 3 countries by total medals won, which can serve as a performance benchmark and useful as data to show to the media.
+
     SELECT 
         Country.name AS Country_Name,
         COUNT(Winner.medalType) AS Total_Medals
@@ -348,6 +357,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | India             | 2                 |
 
 ### Query 6
+Query 6 finds athletes who are team captains and have also won medals, highlighting captains and their role in the team and can be used to identify whether a correlation exists between leadership and medal success.
     SELECT 
         Athlete.name AS Captain_Name,
         Country.name AS Country_Name,
@@ -360,6 +370,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 
 
 ### Query 7
+Query 7 finds the events with the highest number of participants, so managers can better allocate staff members for certain events and use this data to improve or stop underperforming events.
+
     SELECT 
         Event.name AS Event_Name,
         COUNT(Participant.participantID) AS Number_Participants
@@ -385,6 +397,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | Mixed Horse Jumping | 8                        |
 
 ### Query 8
+Query 8 finds the medal efficiency: medals per athlete for each country. It shows how effectively each country can convert its athlete into medal winners, thus the managers can compare medal efficiency between countries with different sizes to see which country is more efficient at converting their athletes into medal winners.
+
     SELECT 
         Country.name AS Country_Name,
         COUNT(DISTINCT Winner.athleteID) * 1.0 / COUNT(DISTINCT Athlete.athleteID) AS Medal_Efficiency
@@ -408,6 +422,8 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | South Korea       | 0.00000               |
 
 ### Query 9
+Query 9 finds Countries with Athletes but no Medals; this would show which countries are underperforming and show where developments are needed.
+
     SELECT 
         Country.name AS Country_Name,
         COUNT(Athlete.athleteID) AS Total_Athletes
@@ -433,6 +449,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 | India             | 1                   |
 
 ### Query 10
+Query 10 shows Coaches Whose Athletes won more than 3 Medals; this highlights and recognizes great coaching talents and show which training methods are working.
     SELECT 
         Coach.name AS Coach_Name,
         COUNT(Winner.medalType) AS Total_Medals
