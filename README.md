@@ -6,7 +6,7 @@
 
 - Nathan Teal: [https://github.com/ntdog36/MIST\_Group4\_Project1](https://github.com/ntdog36/MIST_Group4_Project1)  
 - George Zupko: [https://github.com/gvzupko/MIST_Group4_Project1](https://github.com/gvzupko/MIST_Group4_Project1)
-- Kelly Stephenson: [https://github.com/kms25583-tech](https://github.com/kms25583-tech)
+- Kelly Stephenson: [https://github.com/kms25583-tech/MIST_Group4_Project1](https://github.com/kms25583-tech/MIST_Group4_Project1)
 - Kevin Wang:  [https://github.com/kkw01911/MIST_Group4_Project1](https://github.com/kkw01911/MIST_Group4_Project1)
 - Alexis Melchiorre: [https://github.com/amm-melch/MIST_Group4_Project1](https://github.com/amm-melch/MIST_Group4_Project1)
 
@@ -53,7 +53,7 @@ Overall, this data model provides a detailed, relational view of how athletes, e
 
 | Column Name | Description | Data Type | Size | Format | Key? |
 | ----- | ----- | ----- | ----- | ----- | ----- |
-| assignmentID | Unique sequential number indicating which announcer is assigned to which event and broadcast  | VARCHAR  |  |  | PK |
+| assignmentID | Unique sequential number indicating which announcer is assigned to which event and broadcast  | VARCHAR  | 45 |  | PK |
 | eventID | Indicates what the event is  | INT |  |  | FK (ref.EVENT) |
 | broadcasterID | Indicates which broadcaster is assigned  | INT |  |  | FK (ref.(BROADCASTER) |
 | announcerID | Indicates which announcer is assigned  | INT |  |  | FK (ref.ANNOUNCER) |
